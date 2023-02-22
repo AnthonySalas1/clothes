@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+<table id="main" class="table table-dark">
+    <thead>
+        <a class="btn btn-success"   href="{% url 'clothesapp:create' %}" role="button">Añadir item</a>
+        <tr>
+            <th scope="ID">ID</th>
+            <th scope="PRODUCTO">PRODUCTO</th>
+            <th scope="PRECIO">PRECIO</th>
+            <th scope="STOCK">STOCK</th>
+            <th scope="ACCIONES">ACCIONES</th>
+        </tr>
+    </thead>
+    <tbody>
+{% for item in item_list %}
+        <tr>
+            <th scope="row">{{item.id}}</th>
+            <td>{{item.product}}</td>
+            <td>{{item.price}}</td>
+            <td>{{item.stock}}</td>
+            <td>
+            <a class="btn btn-info" href="{% url 'clothesapp:update' item.id %}" role="button">Editar</a> 
+            <a class="btn btn-danger" href="{% url 'clothesapp:delete' item.id %}" role="button">Eliminar</a>
+
+            </td>
+
+        </tr>
+{% endfor %}
+    </tbody>
+</table>
+
+</body>
+</html>
