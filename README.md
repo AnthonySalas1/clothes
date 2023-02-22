@@ -1,0 +1,4 @@
+# clothes
+DJANGO
+SQLITE
+VERCEL
