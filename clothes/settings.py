@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-npujvu)r*_u7oq=@r0oem!l67lorphfhr_gfn-pjl3#r@-+!k^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.clothesapp']
 
 
 # Application definition
